@@ -38,3 +38,38 @@ print("Total score : " + str(total) \
 ```
 
 - In Python, comments are created using pound sign (#)
+- To run a Python script, you can use `python <scriptname>` command.
+- In Python comments are written with pound (#) symbol.
+- In Python community, mostly underscores are used in naming a variable.
+
+Python supports following arithmetic operations.
+
+* : Multiplication
++ : Addition
+- : Subtraction
+/ : Division
+// : Integer Division
+** : exponential
+% : Modulo
+
+Python also like every other language uses (\) for special characters. (\r, \n, \t, etc.)
+
+- int(data) : converts data argument to int type and returns that int value.
+- float(data) : converts data argument to float type and returns that value.
+- round(number [, digits]) - rounds the number argument to number of decimal digits in the digits argument. If no digit specified then rounds to nearest integer.
+- strdata.lower() - converts uppercase letters to lowercase
+- strdata.upper() - converts lowercase to uppercase
+- range(start, stop[, step]) - returns integer values from the start to the stop but not including stop (with steps of the value step).
+
+```python
+# Interate five times
+for i in range(5):
+  print(i, end=" ")   # 0 1 2 3 4
+```
+
+**Table of Contents:**
+
+1. [Taking inputs and printing output](lessons/io.md)
+2. [Conditionals](lessons/conditionals.md)
+3. [Loops](lessons/loops.md)
+4. [Functions](lessons/functions.md)
