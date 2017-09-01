@@ -67,9 +67,23 @@ for i in range(5):
   print(i, end=" ")   # 0 1 2 3 4
 ```
 
+You can get help for a function using `help(function name)` in Python.
+
+- When you write your own module, you can use """ to create doc strings which will be displayed when you use help() function.
+
+We can assign multiple values like this:
+
+```python
+x, y, z = 1, 2, 3
+```
+
+
+
+
 **Table of Contents:**
 
 1. [Taking inputs and printing output](lessons/io.md)
 2. [Conditionals](lessons/conditionals.md)
 3. [Loops](lessons/loops.md)
 4. [Functions](lessons/functions.md)
+5. [Lists and Tuples](lessons/lists.md)
