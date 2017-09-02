@@ -88,3 +88,4 @@ x, y, z = 1, 2, 3
 4. [Functions](lessons/functions.md)
 5. [Lists and Tuples](lessons/lists.md)
 6. [File I/O](lessons/file_io.md)
+7. [Error Handling](lessons/error_handling.md)

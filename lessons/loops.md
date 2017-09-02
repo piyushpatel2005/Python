@@ -8,7 +8,7 @@ while condition:
   ... ... ...
 ```
 
-[While loop example](examples/while.py)
+[While loop example](../examples/while.py)
 
 In a loop, `break` or `continue` can be used to break the loop prematurely or to skip one of the iterations based on a condition.
 

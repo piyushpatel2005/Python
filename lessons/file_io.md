@@ -50,7 +50,7 @@ with open("test.txt", "r") as infile:
   print(infile.readline())
 ```
 
-[File Open example with text file](examples/file_open.py)
+[File Open example with text file](../examples/file_open.py)
 
 When writing to a file, you can convert int and float to str using str() function as write() method takes string.
 
@@ -139,7 +139,7 @@ with open("movies.txt", newline="") as file:
     print(row[0] + " (" + str(row[1]) +")")
 ```
 
-[CSV file reading writing example](examples/csv_reader.py)
+[CSV file reading writing example](../examples/csv_reader.py)
 
 **Optional arguments for writer/reader function**
 
@@ -152,7 +152,7 @@ writer = csv.writer(file, delimiter='\t')
 reader = csv.reader(file, delimiter='\t')
 ```
 
-[Movie List program using CSV](example/movie_list_csv.py)
+[Movie List program using CSV](../example/movie_list_csv.py)
 
 ## Working with Binary Files
 
@@ -173,4 +173,4 @@ with open("movies.bin", "rb") as file:
   print(movie_list)
 ```
 
-[Binary file reading writing example](examples/binary_file.py)
+[Binary file reading writing example](../examples/binary_file.py)

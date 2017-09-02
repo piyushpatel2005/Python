@@ -70,7 +70,7 @@ while i < len(nums):
 
 **Note:** When list is passed to a function, it is passed as reference. So, all the changes inside called functions will be made on the original list. You don't need to return list. List is mutable and str, int, float are immutable. Immutable data is passed by value.
 
-[Example of list functions](examples/list_example.py)
+[Example of list functions](../examples/list_example.py)
 
 ### List of Lists
 
@@ -179,4 +179,4 @@ x, y, z = tuple_values    # x = 1, y = 2, z = 3
 x = tuple_values[2]
 ```
 
-[Tuple example](examples/number_crunch.py)
+[Tuple example](../examples/number_crunch.py)

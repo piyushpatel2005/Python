@@ -1,6 +1,6 @@
 # Conditionals
 
-Python supports conditionals like if... else, if else if like other languages although it is little different in Python.
+Python supports conditionals like if... else, if else if like other languages although it is little different in Python
 
 ```python
 if condition:
@@ -12,16 +12,18 @@ else:
   statements3...
 ```
 
-[Conditional example](examples/conditional.py)
+[Conditional example](../examples/conditional.py)
 
 Python uses following relational operators in conditions.
 
+`
 == Equal to
 != Not equal to
 > Greater than
 < Less than
 >= Greater than or equal to
 <= Less than or equal to
+`
 
 It also uses **Logical operators** to refine conditions.
 
