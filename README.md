@@ -28,6 +28,16 @@ print("Total score: " + str(score_total))
 print("Average score: " + str(average_score))
 ```
 
+In Python, integer takes 4 bytes and float takes 8 bytes of memory. Floats can also be initialized using scientific notation as 2.3e+4
+
+```python
+value = 2.38E-4
+```
+
+A floating point number is an approximate value that can yield unexcepted results known as floating point errors.
+
+[Math](lessons/math.md) module provides many functions for working with numbers.
+
 - Python uses indentation to create blocks of statements in loops and conditionals. So, when you need to write long code in two sentences, you need to be cautious. Here, are two ways to do it. They can be put to separate line using (\) and (+).
 
 ```python
@@ -44,21 +54,6 @@ print("Total score : " + str(total) \
 
 Python supports following arithmetic operations.
 
-```
-* : Multiplication
-
-+ : Addition
-
-- : Subtraction
-
-/ : Division
-
-// : Integer Division
-
-** : exponential
-
-% : Modulo
-```
 
 |Operator | Description|
 |---------|:----------:|
@@ -72,12 +67,12 @@ Python supports following arithmetic operations.
 
 Python also like every other language uses (\) for special characters. (\r, \n, \t, etc.)
 
-- int(data) : converts data argument to int type and returns that int value.
-- float(data) : converts data argument to float type and returns that value.
-- round(number [, digits]) - rounds the number argument to number of decimal digits in the digits argument. If no digit specified then rounds to nearest integer.
-- strdata.lower() - converts uppercase letters to lowercase
-- strdata.upper() - converts lowercase to uppercase
-- range(start, stop[, step]) - returns integer values from the start to the stop but not including stop (with steps of the value step).
+- `int(data)` : converts data argument to int type and returns that int value.
+- `float(data)` : converts data argument to float type and returns that value.
+- `round(number [, digits])` - rounds the number argument to number of decimal digits in the digits argument. If no digit specified then rounds to nearest integer.
+- `strdata.lower()` - converts uppercase letters to lowercase
+- `strdata.upper()` - converts lowercase to uppercase
+- `range(start, stop[, step])` - returns integer values from the start to the stop but not including stop (with steps of the value step).
 
 ```python
 # Interate five times
@@ -107,3 +102,4 @@ x, y, z = 1, 2, 3
 5. [Lists and Tuples](lessons/lists.md)
 6. [File I/O](lessons/file_io.md)
 7. [Error Handling](lessons/error_handling.md)
+8. [Working with Numbers, Different modules](lessons/numbers.md)

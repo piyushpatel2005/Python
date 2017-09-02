@@ -62,6 +62,7 @@ except Exception:
 - `exit()` : exits Python program
 
 [Multiple Exception handling](../examples/multiple_exceptions.py)
+
 [Movie List with Exception Handling](../examples/exception_handling_movie_list.py)
 
 - After except clauses, a try statement can include finally clause. It is used to clean up the system resources. When you use with statement, you don't need it. File objects include special clean-up method.
