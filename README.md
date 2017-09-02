@@ -44,13 +44,31 @@ print("Total score : " + str(total) \
 
 Python supports following arithmetic operations.
 
+```
 * : Multiplication
+
 + : Addition
+
 - : Subtraction
+
 / : Division
+
 // : Integer Division
+
 ** : exponential
+
 % : Modulo
+```
+
+|Operator | Description|
+|---------|:----------:|
+|* | Multiplication |
+|+ | Addition |
+|- | Subtraction |
+|/ | Division |
+|// | : Integer Division |
+|** | Exponential |
+|% | Modulo |
 
 Python also like every other language uses (\) for special characters. (\r, \n, \t, etc.)
 

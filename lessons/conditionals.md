@@ -16,14 +16,14 @@ else:
 
 Python uses following relational operators in conditions.
 
-`
-== Equal to
-!= Not equal to
-> Greater than
-< Less than
->= Greater than or equal to
-<= Less than or equal to
-`
+|Operator | Description |
+----------|:-----------:|
+|==| Equal to |
+|!= | Not equal to |
+|> | Greater than |
+|< | Less than |
+|>= | Greater than or equal to|
+|<= | Less than or equal to |
 
 It also uses **Logical operators** to refine conditions.
 
