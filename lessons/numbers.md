@@ -22,7 +22,7 @@ result = m.floor(12.54) # 12
 result = m.ceil(12.2) # 13
 ```
 
-# Formatting output
+## Formatting output
 
 String format() method can be used to format the output.
 
