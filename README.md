@@ -104,3 +104,4 @@ x, y, z = 1, 2, 3
 7. [Error Handling](lessons/error_handling.md)
 8. [Working with Numbers, Different modules](lessons/numbers.md)
 9. [Working with Strings](lessons/strings.md)
+10. [Dates and Time in Python](lessons/dates_time.md)
