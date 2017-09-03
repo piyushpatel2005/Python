@@ -75,7 +75,7 @@ number = random.randrange(11, 250, 2)
 die = random.randint(1, 6)
 ```
 
-[Random module game](../examples/random.py)
+[Random module game](../examples/random_num.py)
 
 
 Function can also return multiple comma separated values and the values are assigned in sequence.
