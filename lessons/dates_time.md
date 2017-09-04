@@ -5,7 +5,7 @@ Use `datetime` module to work with dates and times. This is an object-oriented m
 **How to create date and time**
 
 There are three constructors date(), time() and datetime().
-You can also use today() and now() methods to create objects.
+You can also use `today()` and `now()` methods to create objects.
 
 - `date.today()` : returns date object for current date.
 - `datetime.now()` : returns datetime object for current date and time
@@ -29,7 +29,7 @@ entry_time = datetime(2017, 10, 28, 14, 32, 48)
 
 ## Convert string to date time
 
-You can use datetime.strptime() method to parse string to datetime.
+You can use `datetime.strptime()` method to parse string to datetime.
 
 - `datetime.strptime(datetime_str, format_str)` : uses specified format string to convert string to datetime object.
 
@@ -52,7 +52,7 @@ print("Date of birth: ", birth_date)  # It will display complete date with time 
 
 # Formatting dates and times
 
-- Use strftime() method of datetime to format date/time object.
+- Use `strftime()` method of datetime to format date/time object.
 
 - `strftime(format_str)` : uses specified format string to convert date/time object to formatted string.
 

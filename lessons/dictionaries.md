@@ -18,7 +18,7 @@ numbers = {1: "One", 2: "Two", 3: "Three"}
 country = counties['IN']  # country = "India"
 ```
 
-If the key doesn't exist, a KeyError occurs.
+If the key doesn't exist, a `KeyError` occurs.
 We can check the key in dictionary using `in` keyword.
 
 ```python
@@ -46,7 +46,7 @@ else:
   print("There is no country for this code: " + code)
 ```
 
-- To delete an item from the dictionary, you can use `del` keyword. You can also delete using pop() method of a dictionary. This returns the value for the specified key and deletes the key/value pair from the dictionary.
+- To delete an item from the dictionary, you can use `del` keyword. You can also delete using `pop()` method of a dictionary. This returns the value for the specified key and deletes the key/value pair from the dictionary.
 - `pop(key[, default_value])` : returns the value of the specified key and delets the key/value pair from the dictionary. The optional second argument is a value to return if the key doesn't exist.
 - `clear()` : deletes all items.
 
@@ -81,7 +81,7 @@ for code, name in countries.items():
   print(code + " : " + name)
 ```
 
-- To convert view object to a list, you can use list() constructor. To convert list of lists to dictionary, use dict() constructor. If any of the lists contain fewer or more than two values, the dict() constructor causes a ValueError that says the length of the sequence isn't correct.
+- To convert view object to a list, you can use `list()` constructor. To convert list of lists to dictionary, use `dict()` constructor. If any of the lists contain fewer or more than two values, the `dict()` constructor causes a ValueError that says the length of the sequence isn't correct.
 
 - `list(view)` : converts the specified view object to a list
 - `dict(view)` : converts specified 2D list or tuple to a dictionary.

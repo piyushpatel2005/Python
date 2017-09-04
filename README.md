@@ -108,3 +108,4 @@ x, y, z = 1, 2, 3
 11. [Dictionaries](lessons/dictionaries.md)
 12. [Recursion](lessons/recursion.md)
 13. [Object Orieted Programming](lessons/oop.md)
+14. [Inheritance](lessons/inheritance.md)

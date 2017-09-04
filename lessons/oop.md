@@ -30,7 +30,7 @@ print("Name: {:s}".format(product1.name))
 
 - All methods including constructor, must take a reference to the object self as the first argument.
 - For OOP, usually camel case is used.
-- __init__() method can be used to initialize attributes of the object.
+- `__init__()` method can be used to initialize attributes of the object.
 
 ```python
 def __init__(self):
@@ -88,7 +88,7 @@ it gives an `AttributeError: 'Die' object has no attribute '__value'`
 
 You can get the value using `die.getValue()` method.
 
-To access the hidden attribute, you also need to specify setValue() method.
+To access the hidden attribute, you also need to specify `setValue()` method.
 
 ```python
 class Die:
