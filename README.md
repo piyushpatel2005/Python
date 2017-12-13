@@ -91,6 +91,12 @@ x, y, z = 1, 2, 3
 ```
 
 
+Python has several data types and you can get the type of data using `type()` function.
+
+```python
+type(1)   # int
+type('This')    # str
+```
 
 
 **Table of Contents:**

@@ -72,6 +72,14 @@ while i < len(nums):
 
 [Example of list functions](../examples/list_example.py)
 
+In Python, we can check whether an element exists in list using `in` operator.
+
+```python
+l = [1, 2, 'a']
+print('a' in l)   # returns True
+```
+
+
 ### List of Lists
 
 A list element can contain another list making it 2D list. It is similar to 2D array.
@@ -158,6 +166,44 @@ inventory = ["staff", "rope"]
 chest = ["scroll", "pestle"]
 combined = inventory + chest   # ["staff", "rope", "scroll", "pestle"]
 ```
+
+### List Comprehension
+
+List comprehension allows us to create complex lists in single line of code. It is widely used in Data Science.
+
+Here, we use lambda function to create list. You can't have complex logic in lambda functions. They are like arrow functions in JavaScript.
+
+```python
+my_list = [number for number in range(0,100) if number % 2 == 0]
+# This creates a list with numbers between 0 and 100 which are even.
+```
+
+### Functional programming
+
+Python has several functions that allow easy manipulation of lists using lambda functions.
+
+```python
+numbers = range(-5, 5)
+less_than_zero = list(filter(lambda x: x < 0, numbers))
+# gives [-5, -4, -3, -2, -1]
+```
+
+Here filter function takes a function and the list as parameters.
+
+`map` function is used to map the list to another list.
+
+```python
+items = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, items))
+```
+
+`reduce` is used to sum all elements or get single value from list.
+
+```python
+from functools import reduce
+product = reduce((lambda x,y: x*y), [1, 2, 3, 4, 5])    # returns 24
+```
+
 
 ## Tuples:
 

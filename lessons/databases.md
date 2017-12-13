@@ -88,3 +88,89 @@ with closing(conn.cursor()) as c:
 for movie in movies:
   print(movie['name'], "|", movie['year'], "|", movie['minutes'])
 ```
+
+### Executing INSERT, UPDATE, DELETE
+
+These operations don't return a result set. They modify data in the database.
+To save changes after executing these queries, you use `commit()` method on connection object.
+
+- `commit()` : commits the changes to the database.
+
+**INSERT query**
+
+```python
+name = "Hero"
+year = 2016
+minutes = 96
+categoryID = 2
+
+with closing(conn.cursor()) as c:
+  sql = '''INSERT INTO Movie (name, year, minutes, categoryID) VALUES (?, ?, ?, ?)'''
+  c.execute(sql, (name, year, minutes, categoryID))
+  conn.commit()
+```
+
+**UPDATE query**
+
+```python
+id = 4
+minutes = 90
+
+with closing(conn.cursor()) as c:
+  sql = '''UPDATE Movie SET minutes = ? WHERE movieID = ?'''
+  c.execute(sql, (minutes, id))
+  conn.commit()
+```
+
+**DELETE query**
+
+```python
+id = 12
+
+with closing(conn.cursor()) as c:
+  sql = '''DELETE FROM Movie WHERE movieID = ?'''
+  c.execute(query, (id,))
+  conn.commit()
+```
+
+If the specified database is not found, the connect() method may raise `OperationalError`.
+
+```python
+import sqlite3
+from contextlib import closing
+
+conn = sqlite3.connect('movies.sqlite')
+conn.row_factory = sqlite3.Row
+
+# SELECT statement with exception handling
+try:
+  with closing(conn.cursor()) as c:
+    query = '''SELECT * FROM Movie WHERE minutes < ?'''
+    c.execute(query, (90,))
+    movies = c.fetchall()
+except sqlite3.OperationalError as e:
+  print("Error reading database -", e)
+  movies = None
+
+if movies != None:
+  for movie in movies:
+    print(movie['name'] + "|" + movie['year'])
+  print()
+
+# INSERT statement
+name = "The Day After Tomorrow"
+year = 1988
+minutes = 108
+categoryID = 1
+with closing(conn.cursor()) as c:
+  sql = '''INSERT INTO Movie(name, year, minutes, categoryID) VALUES(?, ?, ?, ?)'''
+  c.execute(sql, (name, year, minutes, categoryID))
+  conn.commit()
+print(name, "inserted")
+
+# DELETE statement
+with closing (conn.cursor()) as c:
+  sql = '''DELETE FROM Movie WHERE name = ?'''
+  c.execute(sql, (name, ))
+  conn.commit()
+print(name, "deleted")

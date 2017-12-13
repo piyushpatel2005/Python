@@ -23,6 +23,8 @@ query = '''SELECT ceategoryID, name
 
 If you use an index that doesn't exist in the string, Python raises IndexError
 
+Similarly, Strings are actually list of characters, so we can also check whether a substring exists in a string.
+
 - To find if the word or character exists in a string.
 
 ```python
