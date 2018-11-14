@@ -90,7 +90,13 @@ We can assign multiple values like this:
 x, y, z = 1, 2, 3
 ```
 
+[Sort and shuffle](examples/sorting.py)
 
+[Advanced sorting by options](examples/sorting2.py)
+
+You can find many examples that can be used in scripting in `/examples/` directory of the repository.
+
+[Lambda functions](examples/lambda.py)
 
 
 **Table of Contents:**
