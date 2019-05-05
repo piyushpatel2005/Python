@@ -90,13 +90,22 @@ We can assign multiple values like this:
 x, y, z = 1, 2, 3
 ```
 
+[Sort and shuffle](examples/sorting.py)
 
+<<<<<<< HEAD
 Python has several data types and you can get the type of data using `type()` function.
 
 ```python
 type(1)   # int
 type('This')    # str
 ```
+=======
+[Advanced sorting by options](examples/sorting2.py)
+
+You can find many examples that can be used in scripting in `/examples/` directory of the repository.
+
+[Lambda functions](examples/lambda.py)
+>>>>>>> 191a301e857a2cab25bab9b288bfb3e4f6e40e59
 
 
 **Table of Contents:**
@@ -116,3 +125,4 @@ type('This')    # str
 13. [Object Orieted Programming](lessons/oop.md)
 14. [Inheritance](lessons/inheritance.md)
 15. [Databases using Python](lessons/databases.md)
+16. [Python Scripting](lessons/python_scripting.md)
