@@ -2,4 +2,4 @@ In this projects, we'll have examples of Web programming with Javascript and Pyt
 
 [HTML, CSS](src1/README.md)
 
-[JavaScript](src2/README.md)
+[Python and Flask Framework](flask/README.md)
