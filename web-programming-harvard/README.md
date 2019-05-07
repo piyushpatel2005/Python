@@ -3,3 +3,5 @@ In this projects, we'll have examples of Web programming with Javascript and Pyt
 [HTML, CSS](src1/README.md)
 
 [Python and Flask Framework](flask/README.md)
+
+[SQL Integration into Web Apps](sql/README.md)
