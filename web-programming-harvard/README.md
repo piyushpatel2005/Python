@@ -7,3 +7,5 @@ In this projects, we'll have examples of Web programming with Javascript and Pyt
 [SQL Integration into Web Apps](sql/README.md)
 
 [SQLAlchemy ORM and APIs](orm/README.md)
+
+[JavaScript](javascript/README.md)
