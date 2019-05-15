@@ -11,3 +11,5 @@ In this projects, we'll have examples of Web programming with Javascript and Pyt
 [JavaScript](javascript/README.md)
 
 [Front Ends](frontends/README.md)
+
+[Django](django/README.md)
