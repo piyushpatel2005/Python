@@ -7,3 +7,4 @@ local_settings.py
 db.sqlite3
 media
 .vscode/
+web-programming-harvard/django/real_estate_project/db.sqlite3

@@ -70,3 +70,10 @@ Django comes with Django admin cli. You can see all the commands using `django-a
 ```shell
 # create a new project named btre in present directory
 django-admin startproject btre .
+# start the server with
+python manage.py runserver
+# Create a new app
+python manage.py startapp pages
+
+pip install autopep8
+```
