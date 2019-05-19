@@ -43,3 +43,30 @@ The templates are rendered from `templates` directory. If we want to add new obj
 In Django, we can name different routes and then make urls based on this name in HTML. Check [flights app](airline/flights/views.py)
 
 To add authentication, we can use built in authentication module. Check [example](authentication/users/views.py)
+
+# Use Virtual Environment
+
+See dependencies installed globally using `pip3 freeze`.
+To create virtual environment:
+
+```shell
+cd web-programming-harvard/django/
+python3.7 --version # python3
+python3.7 -m venv ./venv
+# Activate the environment
+source ./venv/bin/activate
+# To deactivate
+deactivate
+# remove virtual environment
+rmvirtualenv venv
+# Activate the environment and run
+python -V
+pip install Django==2.1.1
+pip freeze
+```
+
+Django comes with Django admin cli. You can see all the commands using `django-admin help`. Django creates `manage.py` with 
+
+```shell
+# create a new project named btre in present directory
+django-admin startproject btre .

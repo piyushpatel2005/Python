@@ -1,0 +1,9 @@
+web-programming-harvard/django/real_estate_project/venv
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+.vscode/

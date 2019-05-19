@@ -108,6 +108,23 @@ You can find many examples that can be used in scripting in `/examples/` directo
 >>>>>>> 191a301e857a2cab25bab9b288bfb3e4f6e40e59
 
 
+To update Python 3 in UNIX (Ubuntu). For example, update 3.5 to 3.6
+
+```shell
+sudo add-apt-repository ppa:jonathonf/python3.6
+sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get install python3.6
+python 3.6 -V
+python3 -V # still 3.5
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+sudo update-alternatives --config python3
+# select your version
+sudo rm /usr/bin/python3
+sudo ln -s python3.5 /usr/bin/python3
+```
+
 **Table of Contents:**
 
 1. [Taking inputs and printing output](lessons/io.md)
@@ -126,3 +143,4 @@ You can find many examples that can be used in scripting in `/examples/` directo
 14. [Inheritance](lessons/inheritance.md)
 15. [Databases using Python](lessons/databases.md)
 16. [Python Scripting](lessons/python_scripting.md)
+17. [Web Development with Python](web-programming-harvard/README.md)
