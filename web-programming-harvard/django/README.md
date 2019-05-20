@@ -171,7 +171,7 @@ python manage.py migrate
 - description: TEXT
 - price: INT
 - bedrooms: INT
-- bathrooms: INT
+- bathrooms: DECIMAL
 - garage: INT (zero as default)
 - sqft: INT
 - lot_size: FLOAT (area)
@@ -208,3 +208,14 @@ python manage.py migrate
 - phone: STR
 - message: TEXT
 - contact_date: DATE
+
+
+After creating models, run make migrations to make migrations file.
+
+```shell
+pip install Pillow
+python manage.py makemigrations
+# or for specific model
+# python manage.py makemigrations listings
+python manage.py sqlmigrate listings 0001 # shows the listings sql command that will run with 0001 migration file
+python manage.py migrate
