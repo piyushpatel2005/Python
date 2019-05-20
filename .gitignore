@@ -5,6 +5,7 @@ web-programming-harvard/django/real_estate_project/venv
 __pycache__/
 local_settings.py
 db.sqlite3
-media
+web-programming-harvard/django/real_estate_project/media
+web-programming-harvard/django/real_estate_project/static
 .vscode/
 web-programming-harvard/django/real_estate_project/db.sqlite3

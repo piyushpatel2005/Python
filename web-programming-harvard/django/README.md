@@ -76,4 +76,5 @@ python manage.py runserver
 python manage.py startapp pages
 
 pip install autopep8
+python manage.py collectstatic # This copies static files and puts them in the base static directory
 ```
