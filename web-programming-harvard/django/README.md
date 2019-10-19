@@ -15,9 +15,35 @@ To create a new route, create a function in `views.py`. Provide routing for this
 
 When we create new application, we need to add the application into `settings.py` file in INSTALLED_APPS.
 
-To start the application, run from project level directory `python manage.py runserver`.
+To start the application, run from project level directory `python manage.py runserver`. We can run development server on a custom host and port by loading a different setting file `python manage.py runserver 127.0.0.1:8001 --settings=mysite.settings`
 
-Django also allows for incrementally updating the schema (model) of different objects using migrations. Django includes ORM and we only need to define classes for our objects as shown in [models.py](airline/flights/models.py). Django includes built-in types that maps to datatypes in SQL database. Now, once we made the changes to class, we can use migrations and it will update the schema of the database.
+The settings in `settings.py` include:
+- DEBUG: This turns on debug mode. When moving to production, this must be set to False.
+- ALLOWED_HOSTS: It is not applied when debug mode is on or when tests are run. In production mode, you will have to add your domain/host to this setting in order to allow it to serve your site.
+- INSTALLED_APPS: It is a setting that will be edited for all projects. This setting tells Django which applications are active for this site. By default Django includes following apps.
+    - `django.contrib.admin`: An administration site
+    - `django.contrib.auth`: authentication framework
+    - `django.contrib.contenttypes`: framework for handling content types
+    - `django.contrib.sessions`: session framework
+    - `django.contrib.messages`: messaging framework
+    - `django.contrib.staticfiles`: framework for managing static files
+
+- MIDDLEWARE: a list that contains middleware to be executed.
+- ROOT_URLCONF: indicates Python modeul where the root URL patterns of your application are defined.
+- DATABASES: a dictionary that contains the settings for all databases to be used in the project. There must be a default database.
+- LANGUAGE_CODE: defines the default language code for this site
+- USE_TZ: tells Django to activate/deactivate timezone support. This setting is set to True when you create a new project using `startproject` command.
+
+In Django, an application is a group of models, views, templates and URLs. Applications interact with the framework to provide some specific functionalities and may be reused in various projects. When we create project using `python manage.py startproject <proj_name>`. It creates following files.
+
+- `admin.py`: This is where we register models to include them in Django administration site-using the Django admin site is optional.
+- `apps.py`: This includes main configuration for <proj_name> application.
+- `migrations`: contain database migrations of your application.
+- `models.py`: Data models of application - All applications need to have a model file, but it can be empty.
+- `tests.py`: This is where you can write tests for application
+- `views.py`: logic of application.
+
+Django also allows for incrementally updating the schema (model) of different objects using migrations. Django includes ORM and we only need to define classes for our objects as shown in [models.py](airline/flights/models.py). Django includes built-in types that maps to datatypes in SQL database. Now, once we made the changes to class, we can use migrations and it will update the schema of the database. 
 
 `python manage.py makemigrations` will create migration required to database. It creates new file inside `migrations` directory. To see what will happen if we run this migration, we can use `python manage.py sqlmigrate flights 0001`. To make actual migrations, run `python manage.py migrate`. The database is defined inside `settings.py` file.
 
@@ -39,6 +65,8 @@ f.delete() # delete the flight from database
 The templates are rendered from `templates` directory. If we want to add new objects, we can also use admin site. In order to do that, we need to register our classes into `admin.py` file. To access admin site, we need to login to admin site. For that, we need superuser.
 
 `python manage.py createsuperuser`, Then go to `/admin` url where you'll use these login information.
+
+When we define new models and we want to add model to administration site. We have to edit `admin.py` in our application. Django uses different form widgets for each type of field to display forms.
 
 In Django, we can name different routes and then make urls based on this name in HTML. Check [flights app](airline/flights/views.py)
 
