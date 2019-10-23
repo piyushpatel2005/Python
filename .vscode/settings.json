@@ -1,0 +1,32 @@
+{
+  "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+  "editor.tabSize": 4,
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.wordBasedSuggestions": true,
+  "editor.parameterHints.enabled": true,
+  "editor.tabCompletion": "on",
+  "editor.autoIndent": true,
+  "editor.insertSpaces": true,
+  "files.associations": {
+    "**/templates/*.html": "django-html",
+    "**/templates/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  // "files.associations": {
+  //   "*.html": "jinja-html"
+  // },
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  }
+  "[html]": {
+    "editor.formatOnSave": false
+  }
+  "[python]": {
+    "editor.formatOnSave": true
+  }
+}
