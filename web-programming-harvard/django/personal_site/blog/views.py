@@ -6,13 +6,14 @@ from .forms import EmailPostForm
 from django.core.mail import send_mail
 from .forms import EmailPostForm, CommentForm
 from taggit.models import Tag
+from django.db.models import Count
 
 
-# class PostListView(ListView):
-#     queryset = Post.published.all()
-#     context_object_name = 'posts'
-#     paginate_by = 3
-#     template_name = 'blog/post/list.html'
+class PostListView(ListView):
+    queryset = Post.published.all()
+    context_object_name = 'posts'
+    paginate_by = 3
+    template_name = 'blog/post/list.html'
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
@@ -39,7 +40,7 @@ def post_list(request, tag_slug=None):
         }
     )
 
-def post_details(request, year, month, day, post):
+def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
                                     status='published',
                                     publish__year=year,
@@ -60,13 +61,20 @@ def post_details(request, year, month, day, post):
     else:
         comment_form = CommentForm()
 
+    # Select similar posts based on tags
+    post_tags_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tags_ids) \
+                        .exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')) \
+                                .order_by('-same_tags', '-publish')[:4]
     return render(request,
                 'blog/post/detail.html',
                 {
                     'post': post,
                     'comments': comments,
                     'new_comment': new_comment,
-                    'comment_form': comment_form
+                    'comment_form': comment_form,
+                    'similar_posts': similar_posts
                 })
 
 def post_share(request, post_id):
