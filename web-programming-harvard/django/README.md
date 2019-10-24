@@ -247,3 +247,14 @@ python manage.py makemigrations
 # python manage.py makemigrations listings
 python manage.py sqlmigrate listings 0001 # shows the listings sql command that will run with 0001 migration file
 python manage.py migrate
+```
+
+For class based views view [Personal site view](personal_site/blog/views.py).
+
+## Custom template tags
+
+Django provides helper functions to create your own template tags.
+- `simple_tag`: processes data and returns a string
+- `inclusion_tag`: processes the data and returns a rendered template
+
+Check [template tags example](personal_site/blog/templatetags)
