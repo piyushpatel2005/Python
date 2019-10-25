@@ -1,6 +1,8 @@
 from django import template
 from ..models import Post
 from django.db.models import Count
+from django.utils.safestring import mark_safe
+import markdown
 
 # Create simple tag
 # Each template tags module need to contain variable called `register` to be valid tag library.
@@ -9,6 +11,8 @@ register = template.Library()
 
 # define a tag called `total_posts`
 # Django uses function name as tag name. To define specific name, provide `name` argument.
+
+
 @register.simple_tag
 def total_posts():
     return Post.published.count()
@@ -16,6 +20,8 @@ def total_posts():
 # To use them make them available in template using {% load %} tag. See base.html
 
 # Create inclusion tag
+
+
 @register.inclusion_tag('blog/post/latest_posts.html')
 def show_latest_posts(count=5):
     latest_posts = Post.published.order_by('-publish')[:count]
@@ -23,9 +29,17 @@ def show_latest_posts(count=5):
 # Thiscan be used as {% show_latest_posts 3 %}
 
 # Create simple tag that stores result in a variable to directly output its value.
+
+
 @register.simple_tag
 def get_most_commented_posts(count=5):
     # return first 5 posts with most comments
     return Post.published.annotate(
-        total_comments = Count('comments')
+        total_comments=Count('comments')
     ).order_by('-total_comments')[:count]
+
+
+@register.filter(name='markdown')
+def markdown_format(text):
+    # use mark_safe to mark the result as safe HTML to be rendered in the template.
+    return mark_safe(markdown.markdown(text))

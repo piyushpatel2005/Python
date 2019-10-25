@@ -4,7 +4,7 @@ When we install Django, we get django-admin, which provides new command line opt
 
 To start a new project, use `django-admin startproject projectname`. This creates a project with default files. It includes `manage.py` script which is used to manage the applications.
 
-`django-admin startproject mysite` creates *mysite* folder with following files.
+`django-admin startproject mysite` creates _mysite_ folder with following files.
 
 - `__init__.py` tells that this is a Python package.
 - `settings.py` includes settings for this project.
@@ -18,15 +18,17 @@ When we create new application, we need to add the application into `settings.py
 To start the application, run from project level directory `python manage.py runserver`. We can run development server on a custom host and port by loading a different setting file `python manage.py runserver 127.0.0.1:8001 --settings=mysite.settings`
 
 The settings in `settings.py` include:
+
 - DEBUG: This turns on debug mode. When moving to production, this must be set to False.
 - ALLOWED_HOSTS: It is not applied when debug mode is on or when tests are run. In production mode, you will have to add your domain/host to this setting in order to allow it to serve your site.
 - INSTALLED_APPS: It is a setting that will be edited for all projects. This setting tells Django which applications are active for this site. By default Django includes following apps.
-    - `django.contrib.admin`: An administration site
-    - `django.contrib.auth`: authentication framework
-    - `django.contrib.contenttypes`: framework for handling content types
-    - `django.contrib.sessions`: session framework
-    - `django.contrib.messages`: messaging framework
-    - `django.contrib.staticfiles`: framework for managing static files
+
+  - `django.contrib.admin`: An administration site
+  - `django.contrib.auth`: authentication framework
+  - `django.contrib.contenttypes`: framework for handling content types
+  - `django.contrib.sessions`: session framework
+  - `django.contrib.messages`: messaging framework
+  - `django.contrib.staticfiles`: framework for managing static files
 
 - MIDDLEWARE: a list that contains middleware to be executed.
 - ROOT_URLCONF: indicates Python modeul where the root URL patterns of your application are defined.
@@ -43,7 +45,7 @@ In Django, an application is a group of models, views, templates and URLs. Appli
 - `tests.py`: This is where you can write tests for application
 - `views.py`: logic of application.
 
-Django also allows for incrementally updating the schema (model) of different objects using migrations. Django includes ORM and we only need to define classes for our objects as shown in [models.py](airline/flights/models.py). Django includes built-in types that maps to datatypes in SQL database. Now, once we made the changes to class, we can use migrations and it will update the schema of the database. 
+Django also allows for incrementally updating the schema (model) of different objects using migrations. Django includes ORM and we only need to define classes for our objects as shown in [models.py](airline/flights/models.py). Django includes built-in types that maps to datatypes in SQL database. Now, once we made the changes to class, we can use migrations and it will update the schema of the database.
 
 `python manage.py makemigrations` will create migration required to database. It creates new file inside `migrations` directory. To see what will happen if we run this migration, we can use `python manage.py sqlmigrate flights 0001`. To make actual migrations, run `python manage.py migrate`. The database is defined inside `settings.py` file.
 
@@ -86,14 +88,15 @@ Login
 Dashboard (Inquiries)
 
 ## DESIGN SPECS
+
 Use BTRE logo (Frontend and admin)
 Branding colors – blue(#10284e) green(#30caa0)
 Mobile Friendly
 Social media icons & contact info
 Doesn’t have to be too fancy but must be clean
 
-
 ## FUNCTIONALITY SPECS
+
 Manage listings, realtors, contact inquiries and website users via admin
 Role based users (staff and non-staff)
 Display listings in app with pagination
@@ -108,8 +111,6 @@ Form info should go to database and notify realtor(s) with an email
 Frontend register/login to track inquiries
 Both unregistered and registered users can submit form. If registered, can only submit one per listing
 
-
-
 LISTING PAGE FIELDS
 
 Title
@@ -123,6 +124,7 @@ Garage
 Listing Date
 Realtor – Name & Image
 Main image and 5 other images
+
 # Use Virtual Environment
 
 See dependencies installed globally using `pip3 freeze`.
@@ -144,7 +146,7 @@ pip install Django==2.1.1
 pip freeze
 ```
 
-Django comes with Django admin cli. You can see all the commands using `django-admin help`. Django creates `manage.py` with 
+Django comes with Django admin cli. You can see all the commands using `django-admin help`. Django creates `manage.py` with
 
 ```shell
 # create a new project named btre in present directory
@@ -158,17 +160,15 @@ pip install autopep8
 python manage.py collectstatic # This copies static files and puts them in the base static directory
 ```
 
-
 When we extend a template, that should be the first line on the child template page.
 To install PostgreSQL on Ubuntu
-
 
 ```shell
 sudo apt-get install wget ca-certificates
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib python3-dev 
+sudo apt-get install postgresql postgresql-contrib python3-dev
 sudo su - postgres
 psql
 postgres-# \conninfo
@@ -190,7 +190,7 @@ python manage.py migrate
 **Listings**
 
 - id: INT
-- realtor: INT (FOREIGN KEY to *realtor*)
+- realtor: INT (FOREIGN KEY to _realtor_)
 - title: STR
 - address: STR
 - city: STR
@@ -224,7 +224,6 @@ python manage.py migrate
 - is_mvp: BOOL (default false)
 - hire_date: DATE
 
-
 **Contact** This is the inquiry sent by users
 
 - id: INT
@@ -236,7 +235,6 @@ python manage.py migrate
 - phone: STR
 - message: TEXT
 - contact_date: DATE
-
 
 After creating models, run make migrations to make migrations file.
 
@@ -251,10 +249,13 @@ python manage.py migrate
 
 For class based views view [Personal site view](personal_site/blog/views.py).
 
-## Custom template tags
+## Custom template tags and filters
 
 Django provides helper functions to create your own template tags.
+
 - `simple_tag`: processes data and returns a string
 - `inclusion_tag`: processes the data and returns a rendered template
 
 Check [template tags example](personal_site/blog/templatetags)
+
+Django has filters that allow us to modify variables in templates. These are Python functions that take one or two parameters - the value of variable it's being applied to, and an optional argument. We can also pipe the filter operations on a variable. They look like `{{variable|my_filter}}` or `{{variable|my_filter:"foo"}}`. Check example of [markdown filter](perssonal_site/blog/../../personal_site/blog/templatetags/blog_tags.py)
