@@ -8,7 +8,7 @@ from .forms import EmailPostForm, CommentForm, SearchForm
 from taggit.models import Tag
 from django.db.models import Count
 
-from django.contrib.postgres.search import SearchVector, SearchRank, SearchQuery
+from django.contrib.postgres.search import SearchVector, SearchRank, SearchQuery, TrigramSimilarity
 
 
 class PostListView(ListView):
@@ -122,13 +122,22 @@ def post_search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            search_vector = SearchVector('title', 'body')
-            search_query = SearchQuery(query)
-            results = Post.objects.annotate(
-                search=search_vector,
-                rank=SearchRank(search_vector, search_query)
-            ).filter(search=search_query).order_by('-rank')
+            # Apply heighest weight on title and then body. So if the word included in title, it will appear first.
+            # The default rank is D. The rank is A,B,C,D corresponding to 1, 0.4, 0.2, 0.1
+            # Search based on ranking
+            # search_vector = SearchVector(
+            #     'title', weight='A') + SearchVector('body', weight='B')
+            # search_query = SearchQuery(query)
 
+            # results = Post.objects.annotate(
+            #     search=search_vector,
+            #     rank=SearchRank(search_vector, search_query)
+            # ).filter(rank__gte=0.3).order_by('-rank')
+
+            # Search based on Trigram similarity
+            results = Post.objects.annotate(
+                similarity=TrigramSimilarity('title', query),
+            ).filter(similarity__gt=0.3).order_by('-similarity')
     return render(request,
                   'blog/post/search.html',
                   {

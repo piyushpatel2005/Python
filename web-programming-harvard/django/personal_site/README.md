@@ -15,3 +15,10 @@ grant all on database blog to blog;
 ```
 
 When we create new database, we need to migrate again and create a separate super user using `python manage.py createsuperuser` for new database data.
+
+For using trigram similarity with PostgreSQL, we will install `pg_trgm` extension.
+
+```shell
+sudo su - postgresql # password of root user
+CREATE EXTENSION pg_trgm;
+```
