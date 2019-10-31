@@ -259,3 +259,7 @@ Django provides helper functions to create your own template tags.
 Check [template tags example](personal_site/blog/templatetags)
 
 Django has filters that allow us to modify variables in templates. These are Python functions that take one or two parameters - the value of variable it's being applied to, and an optional argument. We can also pipe the filter operations on a variable. They look like `{{variable|my_filter}}` or `{{variable|my_filter:"foo"}}`. Check example of [markdown filter](perssonal_site/blog/../../personal_site/blog/templatetags/blog_tags.py)
+
+
+1. [Personal site - Basic layouts](personal_site)
+2. [Bookmarks social website - Authentication](bookmarks)
