@@ -12,3 +12,5 @@ Django comes with built-in authentication framework that can handle user authent
 - `User` including username, password, email, first_name, last_name and is_active fields
 - `Group` to categorize users
 - `Permission` flag for users or groups to perform actions.
+
+Create superuser `python manage.py createsuperuser`
