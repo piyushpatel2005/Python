@@ -1,5 +1,7 @@
 # Bookmarks social website
 
+This app is based on Django By Example book.
+
 ```shell
 django-admin startproject bookmarks
 cd bookmarks/
@@ -41,3 +43,4 @@ To display appropriate link depending on either user is logged in or not, HttpRe
 
 ## Password change
 
+For password reset, we use Django's inbuilt views. We need to setup SMTP configuration in `settings.py` to send emails for resetting password. During developmnet, we can configure Django to write emails to the standard output instead of sending them through SMTP server. For that, include EMAIL_BACKEND variable in `settings.py` file.

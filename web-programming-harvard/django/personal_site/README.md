@@ -1,5 +1,7 @@
 # Personal blog site
 
+This website is based on Django By Example book.
+
 This project uses Django 2.0.5
 
 Extra PostgreSQL is required using:
