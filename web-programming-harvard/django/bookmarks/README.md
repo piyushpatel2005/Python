@@ -37,3 +37,7 @@ To protect a specific view from being accessible to non-registered users, we can
 - LOGOUT_URL: URL to redirect the user to logout.
 
 To display appropriate link depending on either user is logged in or not, HttpRequest object includes current user object. That can be accessed using `request.user`. A non-authenticated user is set in the request as an instance of `AnonymousUser`. We can check whether user is authenticated by accessing its read-only attribute `is_authenticated`.
+
+
+## Password change
+
