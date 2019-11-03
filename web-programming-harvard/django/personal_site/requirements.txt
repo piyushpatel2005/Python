@@ -1,4 +1,4 @@
-Django==2.0.5
+Django==2.0.12
 django-taggit==0.22.2
 Markdown==2.6.11
 pkg-resources==0.0.0
