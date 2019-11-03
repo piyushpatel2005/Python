@@ -84,3 +84,15 @@ We can create new messages using the `add_message()` method or any of other meth
 - `warning()`: warning messages
 - `error()`: action failed message
 - `debug()`: Debug messages that will be removed in production.
+
+Messages framework includes the context processor that adds a messages variable to the request context.
+
+### Custom authentication backend
+
+Django allows to authenticate against different sources. The AUTHENTICATION_BACKENDS setting includes the list of authentication backends for project. The default `ModelBackend` authenticates users against database using the user model of `django.contrib.auth`. Whenever we use the `authenticate()` function, Django tries to authenticate the user against each of the backends defined in AUTHENTICATION_BACKENDS one by one, until one of them successfully authenticates the user. If all backends fail to authenticate, the user will not be authenticated into site. Django provides a simple way to define your own authentication backends. An authentication backend is a class that provides two methods:
+
+- `authenticate()`: It takes `request` object and user credentials and has to return a `user` object that matches those credentials or `None`.
+- `get_user()`: Takes a user ID parameter and has to return a `user` object.
+
+Check [authentication backend](account/authentication.py) to let users authenticate in our site using their email address instead of username.
+We added two authentication backends using AUTHENTICATION_BACKENDS variable in `settings.py` file. With two authentication backends specified, user can login using username or email account.
