@@ -49,3 +49,38 @@ For password reset, we use Django's inbuilt views. We need to setup SMTP configu
 ### User registration
 
 For user registration, we can use existing Django User class to modify our required parameters as shown in [form](bookmarks/account/forms.py) using `fields` in Meta class. We added two additional fields for password and password2. We defined `clean_password2` to check that two passwords match. This check is done when we validate the form using `is_valid()` method. We can provide a `clean_<fieldname>()` method to any of the fields in order to clean the value or raise form validation errors for a specific field. Forms also include a general `clean()` method to validate the entire form. Django also provides a `UserCreationForm` form that we can use. When registering a user, we save the user's password using `set_password()` which handles encryption to save password.
+
+### Extending user model
+
+If we want to add few additional data into user model, the best way to do is to create a profile model that contains all additional fields and a one-to-one relationship with the Django user model. To keep our code generic, always use `get_user_model()` method to retrieve the user model and the AUTH_USER_MODEL setting to refer to it when defining model's relationships to the user model.
+
+For images, we need to install `Pillow` library using
+
+```shell
+pip install Pillow==5.1.0
+```
+
+For Django to serve media files uploaded by users with the development server, add MEDIA_URL and MEDIA_ROOT variables to `settings.py` file. MEDIA_URL is the base URL to serve the media files and MEDIA_ROOT is the local path where they reside.
+
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
+
+To update the view in Django admin site, we register Profile model in [admin.py](account/admin.py).
+
+We added two new classes. `UserEditForm` which will allow users to edit their first name, last name and email which are attributes of the built-in Django user model. `ProfileEditForm` will allow users to edit the profile data we save in the custom Profile model. Users will be able to edit their date of birth and upload a picture for their profile. When users register on site, we create an empty profile associated with them.
+
+We add `login_required` decorator so that only authenticated users can edit their profile.
+If we want to substitute the whole user model with your own custom model, we can inherit from Django's `AbstractUser` class.
+
+### Using Messages framework
+
+The messages framework allows us to inform users about errors or success. The messages framework is at `django.contrib.messages` and is included in INSTALLED_APPS. There is also middleware in MIDDLEWARE settings. Messages are stored in a cookie by default and they are displayed in the next request the user does.
+We can create new messages using the `add_message()` method or any of other method.
+
+- `success()`: Success messages to be displayed after action was successful
+- `info()`: informational messages
+- `warning()`: warning messages
+- `error()`: action failed message
+- `debug()`: Debug messages that will be removed in production.
