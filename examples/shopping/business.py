@@ -18,7 +18,10 @@ class LineItem:
         self.quantity = quantity
 
     def getTotal(self):
-        total = self.product.getDiscountPrice() * self.quantity
+        if self.quantity > 1:
+            total = self.product.getDiscountPrice() * self.quantity * 0.95
+        else:
+            total = self.product.getDiscountPrice() * self.quantity
         return total
 
 class Cart:
@@ -34,7 +37,10 @@ class Cart:
     def getTotal(self):
         total = 0.0
         for item in self.__lineItems:
-            total += item.getTotal()
+            if item.quantity > 1:
+                total = total + item.getTotal()
+            else:
+                total += item.getTotal()
         return total
 
     def getItemCount(self):
