@@ -1,7 +1,7 @@
 Django==2.0.5
 django-taggit==0.22.2
 Markdown==2.6.11
-Pillow==5.1.0
+Pillow==8.2.0
 pkg-resources==0.0.0
 psycopg2==2.7.4
 pytz==2019.3
