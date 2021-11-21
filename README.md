@@ -144,3 +144,5 @@ sudo ln -s python3.5 /usr/bin/python3
 15. [Databases using Python](lessons/databases.md)
 16. [Python Scripting](lessons/python_scripting.md)
 17. [Web Development with Python](web-programming-harvard/README.md)
+18. [Argparse Module](lessons/argparse.md)
+19. [Collections Module](lessons/collections.md)
