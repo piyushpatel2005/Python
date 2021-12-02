@@ -146,3 +146,5 @@ sudo ln -s python3.5 /usr/bin/python3
 17. [Web Development with Python](web-programming-harvard/README.md)
 18. [Argparse Module](lessons/argparse.md)
 19. [Collections Module](lessons/collections.md)
+20. [Doctest Module](lessons/doctest.md)
+21. [Unittest Module](lessons/unittest.md)

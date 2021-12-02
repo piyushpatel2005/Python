@@ -1,7 +1,7 @@
 # Argparse module
 
 ```python
-# examples/argparser_1.py
+# examples/argparse/argparser_1.py
 import argparse
 parser = argparse.ArgumentParser(
     description='A simple argument parser',
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 Let's see how we can add few additional arguments.
 
 ```python
-# examples/argparser_2.py
+# examples/argparse/argparser_2.py
 import argparse
 
 def get_args():
